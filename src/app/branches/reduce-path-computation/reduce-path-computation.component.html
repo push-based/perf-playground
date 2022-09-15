@@ -1,1 +1,41 @@
-<p>reduce-path-computation works!</p>
+<h2 class="title">Reduce Path Complexity</h2>
+<div class="example">
+  <div>
+    <label>Input Value</label>
+    <input #valueInput [value]="value"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setValue(valueInput.value)">
+  </div>
+  <div>
+    <label>Complexity</label>
+    <input #complexityInput
+           [value]="complexity"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setComplexity(complexityInput.value)">
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Metric</th>
+      <th>ops/s</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Not optimised</td>
+      <td>{{ nonOptimisedRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Optimised</td>
+      <td>{{ optimisedRuntime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

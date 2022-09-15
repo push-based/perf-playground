@@ -11,6 +11,12 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'types-of-loops',
+        loadComponent: () => import('./looping/types-of-loops/types-of-loops.component').then(
+          m => m.TypesOfLoopsComponent
+        )
+      },
+      {
         path: 'property-lookups-reversing',
         loadComponent: () => import('./looping/property-lookups-reversing/property-lookups-reversing.component').then(
           m => m.PropertyLookupsReversingComponent

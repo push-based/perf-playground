@@ -8,8 +8,12 @@ export function createItems(amount: number): Item[] {
   return new Array(amount).fill(null).map((i, j) => ({
     id: j,
     value: Math.random(),
-    refItem: Math.floor(Math.random() * (amount - 2) + 1)
+    refItem: randomIntFromInterval(0, amount - 1)
   }));
+}
+
+export function randomIntFromInterval(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 export function measureOperations(f: Function, duration: number): number {

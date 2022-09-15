@@ -1,4 +1,4 @@
-<h2 class="title">Property Lookups & Reversing</h2>
+<h2 class="title">Types of Loops</h2>
 <div class="example">
   <div>
     <label>Iterations</label>
@@ -20,16 +20,28 @@
     </thead>
     <tbody>
       <tr>
-        <td>For Loop</td>
-        <td>{{ originalLoopRuntime }}</td>
+        <td>Functional (forEach)</td>
+        <td>{{ functionalLoopRuntime }}</td>
       </tr>
       <tr>
-        <td>Reduce Property Lookups</td>
-        <td>{{ reducePropertyLookupsRuntime }}</td>
+        <td>For</td>
+        <td>{{ regularForRuntime }}</td>
       </tr>
       <tr>
-        <td>Reduce Property Lookups & Reverse</td>
-        <td>{{ reducePropertyLookupsAndReverseRuntime }}</td>
+        <td>While</td>
+        <td>{{ whileRuntime }}</td>
+      </tr>
+      <tr>
+        <td>Do While</td>
+        <td>{{ doWhileRuntime }}</td>
+      </tr>
+      <tr>
+        <td>For In</td>
+        <td>{{ forInRuntime }}</td>
+      </tr>
+      <tr>
+        <td>For Of</td>
+        <td>{{ forOfRuntime }}</td>
       </tr>
     </tbody>
   </table>

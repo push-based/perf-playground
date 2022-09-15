@@ -1,1 +1,24 @@
-<p>branchless-programming works!</p>
+<h2 class="title">Branchless Programming</h2>
+<div class="example">
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Metric</th>
+      <th>ops/s</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>With branches</td>
+      <td>{{ withBranchesRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Branchless</td>
+      <td>{{ branchlessRuntime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

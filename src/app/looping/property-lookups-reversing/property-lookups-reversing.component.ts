@@ -12,7 +12,6 @@ export class PropertyLookupsReversingComponent {
   items: Item[] = [];
 
   originalLoopRuntime?: number;
-  functionalLoopRuntime?: number;
   reducePropertyLookupsRuntime?: number;
   reducePropertyLookupsAndReverseRuntime?: number;
 
@@ -36,13 +35,7 @@ export class PropertyLookupsReversingComponent {
       measureOperations(this.originalLoop.bind(this), this.duration);
     this.reducePropertyLookupsRuntime =
       measureOperations(this.reducePropertyLookups.bind(this), this.duration);
-    this.functionalLoopRuntime =
-      measureOperations(this.functionalLoop.bind(this), this.duration);
     this.cdRef.detectChanges();
-  }
-
-  functionalLoop(): void {
-    this.items.forEach(item => this.work(item));
   }
 
   originalLoop(): void {
