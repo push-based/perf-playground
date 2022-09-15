@@ -1,1 +1,32 @@
-<p>avoid-nested-loops works!</p>
+<div class="example">
+  <h2>Nested Loops</h2>
+  <div>
+    <label>Iterations</label>
+    <input #iterations [value]="initialValue"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setItems(iterations.value)">
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Metric</th>
+      <th>ops/s</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Nested loop</td>
+      <td>{{ nestedLoopRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Lookup Table</td>
+      <td>{{ lookupTableLoopRuntime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

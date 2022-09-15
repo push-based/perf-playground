@@ -1,1 +1,40 @@
-<p>property-lookups-reversing works!</p>
+<div class="example">
+  <h2>Original Loop</h2>
+  <div>
+    <label>Iterations</label>
+    <input #iterations [value]="initialValue"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setItems(iterations.value)">
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>ops/s</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Functional (forEach)</td>
+        <td>{{ functionalLoopRuntime }}</td>
+      </tr>
+      <tr>
+        <td>For Loop</td>
+        <td>{{ originalLoopRuntime }}</td>
+      </tr>
+      <tr>
+        <td>Reduce Property Lookups</td>
+        <td>{{ reducePropertyLookupsRuntime }}</td>
+      </tr>
+      <tr>
+        <td>Reduce Property Lookups & Reverse</td>
+        <td>{{ reducePropertyLookupsAndReverseRuntime }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
