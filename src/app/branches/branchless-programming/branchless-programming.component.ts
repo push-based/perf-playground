@@ -16,7 +16,9 @@ export class BranchlessProgrammingComponent {
   duration = 1000;
 
   withBranchesRuntime?: number;
+  withBranchesLoopedRuntime?: number;
   branchlessRuntime?: number;
+  branchlessLoopedRuntime?: number;
 
   private names = ['Rudolf', 'Maria', 'Ben', 'Sarah', 'Jon', 'Peter', 'Petra'];
 
@@ -34,11 +36,17 @@ export class BranchlessProgrammingComponent {
 
   private preparedMap = new Map<string, string>(
     Object.entries(this.preparedBranches)
-  )
+  );
+
+  branches = 10;
 
   constructor(
     private cdRef: ChangeDetectorRef
   ) {}
+
+  setBranches(amount: string) {
+    this.branches = parseInt(amount);
+  }
 
   start(): void {
     const value = randomIntFromInterval(0, 6);
@@ -47,6 +55,10 @@ export class BranchlessProgrammingComponent {
       measureOperations(this.withBranches.bind(this), this.duration);
     this.branchlessRuntime =
       measureOperations(this.branchless.bind(this), this.duration);
+    this.withBranchesLoopedRuntime =
+      measureOperations(this.withBranchesLooped.bind(this), this.duration);
+    this.branchlessLoopedRuntime =
+      measureOperations(this.branchlessLooped.bind(this), this.duration);
     this.cdRef.detectChanges();
   }
 
@@ -74,8 +86,28 @@ export class BranchlessProgrammingComponent {
     }
   }
 
+  private withBranchesLooped(): string {
+    let result = '';
+    for(let i = 0; i <= this.branches; i++) {
+      const value = randomIntFromInterval(0, 6);
+      this.name = this.names[value];
+      result = this.withBranches();
+    }
+    return result;
+  }
+
   private branchless(): string {
     return this.preparedMap.get(this.name) as string;
+  }
+
+  private branchlessLooped(): string {
+    let result = '';
+    for(let i = 0; i <= this.branches; i++) {
+      const value = randomIntFromInterval(0, 6);
+      const name = this.names[value];
+      result = this.preparedMap.get(name) as string;
+    }
+    return result;
   }
 
   private work(): boolean {

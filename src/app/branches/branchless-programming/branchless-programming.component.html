@@ -1,5 +1,13 @@
 <h2 class="title">Branchless Programming</h2>
 <div class="example">
+  <div>
+    <label>Amount Branches</label>
+    <input #valueInput [value]="branches"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setBranches(valueInput.value)">
+  </div>
   <div class="buttons">
     <button (click)="start()">Start</button>
   </div>
@@ -18,6 +26,14 @@
     <tr>
       <td>Branchless</td>
       <td>{{ branchlessRuntime }}</td>
+    </tr>
+    <tr>
+      <td>With branches (looped)</td>
+      <td>{{ withBranchesLoopedRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Branchless (looped)</td>
+      <td>{{ branchlessLoopedRuntime }}</td>
     </tr>
     </tbody>
   </table>
