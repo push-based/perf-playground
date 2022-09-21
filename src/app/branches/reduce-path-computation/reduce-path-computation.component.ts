@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { measureOperations } from '../../shared/util';
 
 @Component({
   selector: 'pp-reduce-path-computation',
@@ -10,11 +11,57 @@ import { CommonModule } from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReducePathComputationComponent implements OnInit {
+export class ReducePathComputationComponent {
 
-  constructor() { }
+  value = 100;
+  complexity = 100;
+  duration = 1000;
 
-  ngOnInit(): void {
+  nonOptimisedRuntime?: number;
+  optimisedRuntime?: number;
+
+  constructor(
+    private cdRef: ChangeDetectorRef
+  ) {}
+
+  setValue(amount: string): void {
+    this.value = parseInt(amount);
   }
+
+  setComplexity(amount: string): void {
+    this.complexity = parseInt(amount);
+  }
+
+  start(): void {
+    this.nonOptimisedRuntime =
+      measureOperations(this.nonOptimised.bind(this), this.duration);
+    this.optimisedRuntime =
+      measureOperations(this.optimised.bind(this), this.duration);
+    this.cdRef.detectChanges();
+  }
+
+  private nonOptimised(): void {
+    if (
+      this.complexComparison() ||
+      this.value <= 100
+    ) {
+      this.work();
+    }
+  }
+
+  private optimised(): void {}
+
+  private work(): boolean {
+    return Math.random() * 100 % 2 === 0;
+  }
+
+  private complexComparison(): boolean {
+    let result = false;
+    for (let i = 0; i <= this.complexity; i++) {
+      result = i >= this.complexity;
+    }
+    return result;
+  }
+
 
 }

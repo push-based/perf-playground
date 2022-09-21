@@ -1,1 +1,32 @@
-<p>reduce-iterations works!</p>
+<h2 class="title">Reduce Iterations</h2>
+<div class="example">
+  <div>
+    <label>Iterations</label>
+    <input #iterations [value]="initialValue"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setItems(iterations.value)">
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Metric</th>
+      <th>ops/s</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Multiple Iterations</td>
+      <td>{{ multipleIterationsRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Single Iteration</td>
+      <td>{{ singleIterationRuntime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

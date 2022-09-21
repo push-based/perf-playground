@@ -1,1 +1,39 @@
-<p>read-operations works!</p>
+<h2 class="title">Improve Read Access</h2>
+<div class="example">
+  <div>
+    <label>Iterations</label>
+    <input #iterations [value]="initialValue"
+           type="number"
+           min="1"
+           max="1000000000"
+           (change)="setItems(iterations.value)">
+  </div>
+  <div>
+    <label>Id to process</label>
+    <input #idInput [value]="initialValue"
+           type="number"
+           min="1"
+           max="1000000000">
+  </div>
+  <div class="buttons">
+    <button (click)="start()">Start</button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Metric</th>
+      <th>ops/s</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Array Find</td>
+      <td>{{ arrayFindRuntime }}</td>
+    </tr>
+    <tr>
+      <td>Lookup Table</td>
+      <td>{{ lookupTableRuntime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
