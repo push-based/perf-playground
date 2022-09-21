@@ -33,7 +33,6 @@ export class AvoidNestedLoopsComponent {
   setItems(amount: string): void {
     this.items = createItems(parseInt(amount));
     this.childItems = createItems(parseInt(amount));
-    this.childTable = toDictionary(this.childItems, 'id');
   }
 
   start(): void {
@@ -53,11 +52,6 @@ export class AvoidNestedLoopsComponent {
   }
 
   private lookupTableLoop(): void {
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
-      const child = this.childTable[item.refItem];
-      this.work(child);
-    }
   }
 
   private work(item: Item): boolean {

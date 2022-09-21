@@ -49,6 +49,12 @@ import { filter } from 'rxjs';
          [routerLink]="['/branches/branchless-programming']">
         Branchless Programming
       </a>
+      <h2 class="group-title">Scheduling</h2>
+      <a class="nav-item"
+         routerLinkActive="active"
+         [routerLink]="['/scheduling/prioritize']">
+        Prioritize
+      </a>
     </div>
     <div class="main">
       <router-outlet></router-outlet>

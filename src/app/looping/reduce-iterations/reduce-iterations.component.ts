@@ -20,7 +20,7 @@ export class ReduceIterationsComponent {
   duration = 1000;
 
   multipleIterationsRuntime?: number;
-  singleITerationRuntime?: number;
+  singleIterationRuntime?: number;
 
   constructor(
     private cdRef: ChangeDetectorRef
@@ -35,25 +35,19 @@ export class ReduceIterationsComponent {
   start(): void {
     this.multipleIterationsRuntime =
       measureOperations(this.multipleIterations.bind(this), this.duration);
-    this.singleITerationRuntime =
+    this.singleIterationRuntime =
       measureOperations(this.singleIteration.bind(this), this.duration);
     this.cdRef.detectChanges();
   }
 
-  private multipleIterations(): void {
-    this.items.filter(
+  private multipleIterations(): number[] {
+    return this.items.filter(
       item => this.work(item)
     ).map(item => item.value);
   }
 
-  private singleIteration(): void {
-    let mapped: Item[] = [];
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i];
-      if (this.work(item)) {
-        mapped.push(item);
-      }
-    }
+  private singleIteration(): number[] {
+    return [];
   }
 
   private work(item: Item): boolean {

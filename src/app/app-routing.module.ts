@@ -7,7 +7,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'property-lookups-reversing',
+        redirectTo: 'types-of-loops',
         pathMatch: 'full'
       },
       {
@@ -63,6 +63,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'scheduling',
+    children: [
+      {
+        path: 'prioritize',
+        loadComponent: () => import('./scheduling/prioritize/prioritize.component').then(m => m.PrioritizeComponent)
+      }
+    ]
+  },
+  {
     path: 'dom-access',
     children: [
       {
@@ -77,7 +86,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/looping/property-lookups-reversing',
+    redirectTo: '/looping/types-of-loops',
     pathMatch: 'full'
   }
 ];

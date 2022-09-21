@@ -24,19 +24,7 @@ export class BranchlessProgrammingComponent {
 
   private name = '';
 
-  private preparedBranches: Record<string, string> = {
-    Rudolf: "Heya, Rudolf!",
-    Maria: "Good Morning, Maria!",
-    Ben: "How are you, Ben?",
-    Sarah: "Welcome, Sarah.",
-    Jon: "See you soon, Jon.",
-    Peter: "Hey Peter",
-    Petra: "Ciao Petra"
-  };
-
-  private preparedMap = new Map<string, string>(
-    Object.entries(this.preparedBranches)
-  );
+  private preparedBranches: Record<string, string> = {};
 
   branches = 10;
 
@@ -86,6 +74,10 @@ export class BranchlessProgrammingComponent {
     }
   }
 
+  private branchless(): string {
+    return '';
+  }
+
   private withBranchesLooped(): string {
     let result = '';
     for(let i = 0; i <= this.branches; i++) {
@@ -96,16 +88,12 @@ export class BranchlessProgrammingComponent {
     return result;
   }
 
-  private branchless(): string {
-    return this.preparedMap.get(this.name) as string;
-  }
-
   private branchlessLooped(): string {
     let result = '';
     for(let i = 0; i <= this.branches; i++) {
       const value = randomIntFromInterval(0, 6);
       const name = this.names[value];
-      result = this.preparedMap.get(name) as string;
+      result = this.preparedBranches[name] as string;
     }
     return result;
   }

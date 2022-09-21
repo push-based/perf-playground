@@ -33,7 +33,6 @@ export class ReadOperationsComponent {
 
   setItems(amount: string): void {
     this.items = createItems(parseInt(amount));
-    this.itemTable = toDictionary(this.items, 'id');
   }
 
   start(): void {
@@ -54,10 +53,6 @@ export class ReadOperationsComponent {
 
   private lookupTable(): void {
     const id = this.getId();
-    const item = this.itemTable[id];
-    if (item) {
-      this.work(item);
-    }
   }
 
   private getId(): number {

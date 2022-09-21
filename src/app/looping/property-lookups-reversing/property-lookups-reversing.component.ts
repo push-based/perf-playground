@@ -45,20 +45,13 @@ export class PropertyLookupsReversingComponent {
   }
 
   reducePropertyLookups(): void {
-    const length = this.items.length;
-    for (let i = 0; i < length; i++) {
-      this.work(this.items[i]);
-    }
   }
 
   reducePropertyLookupsAndReverse(): void {
-    for (let i = this.items.length - 1; i >= 0; i--) {
-      this.work(this.items[i]);
-    }
   }
 
-  work(item: Item): boolean {
-    return item.id % 2 === 0;
+  work(item: Item): number {
+    return item.value * 2;
   }
 
 }

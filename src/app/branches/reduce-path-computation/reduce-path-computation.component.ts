@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { toDictionary } from '@rx-angular/cdk/transformations';
-import { createItems, Item, measureOperations } from '../../shared/util';
+import { measureOperations } from '../../shared/util';
 
 @Component({
   selector: 'pp-reduce-path-computation',
@@ -50,14 +49,7 @@ export class ReducePathComputationComponent {
     }
   }
 
-  private optimised(): void {
-    if (
-      this.value <= 100 ||
-      this.complexComparison()
-    ) {
-      this.work();
-    }
-  }
+  private optimised(): void {}
 
   private work(): boolean {
     return Math.random() * 100 % 2 === 0;
