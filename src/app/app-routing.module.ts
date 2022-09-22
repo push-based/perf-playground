@@ -75,8 +75,8 @@ const routes: Routes = [
     path: 'dom-access',
     children: [
       {
-        path: 'branchless-programming',
-        loadComponent: () => import('./branches/branchless-programming/branchless-programming.component').then(m => m.BranchlessProgrammingComponent)
+        path: 'forced-reflow',
+        loadComponent: () => import('./dom-access/forced-reflow/forced-reflow.component').then(m => m.ForcedReflowComponent)
       },
       {
         path: 'reduce-path-computation',

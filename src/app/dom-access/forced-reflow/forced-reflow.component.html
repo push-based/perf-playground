@@ -1,0 +1,19 @@
+<h2 class="title">Forced Relayout</h2>
+<div class="example">
+  <div class="buttons">
+    <button (click)="animateSlow()">Animate slow</button>
+    <button (click)="animateFast()">Animate fast</button>
+    <button (click)="animateSuperFast()">Animate super fast</button>
+  </div>
+  <div>Duration: <strong>{{ duration }}ms</strong></div>
+  <div class="container">
+    <div class="item"
+         #menuItem
+         *ngFor="let item of items">
+      <span class="label">
+        <span>{{ item.value }}</span>
+      </span>
+      <div class="bar" [style.width.px]="item.width"></div>
+    </div>
+  </div>
+</div>

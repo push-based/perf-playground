@@ -55,6 +55,12 @@ import { filter } from 'rxjs';
          [routerLink]="['/scheduling/prioritize']">
         Prioritize
       </a>
+      <h2 class="group-title">CSS & DOM Access</h2>
+      <a class="nav-item"
+         routerLinkActive="active"
+         [routerLink]="['/dom-access/forced-reflow']">
+        Forced Reflow
+      </a>
     </div>
     <div class="main">
       <router-outlet></router-outlet>
