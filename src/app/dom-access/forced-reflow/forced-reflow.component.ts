@@ -5,15 +5,14 @@ import {
   QueryList,
   ViewChildren
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { createItems } from '../../shared/util';
 
 @Component({
-  selector: 'pp-forced-reflow',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './forced-reflow.component.html',
-  styles: [`
+    selector: 'pp-forced-reflow',
+    imports: [],
+    templateUrl: './forced-reflow.component.html',
+    styles: [`
     .container {
       margin-top: 16px;
       overflow: auto;
@@ -40,7 +39,7 @@ import { createItems } from '../../shared/util';
       position: absolute;
     }
   `],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ForcedReflowComponent {
 

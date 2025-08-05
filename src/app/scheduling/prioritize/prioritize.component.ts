@@ -1,15 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LetModule } from '@rx-angular/template';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { RxLet } from '@rx-angular/template/let';
 import { BehaviorSubject } from 'rxjs';
 import { WorkComponent } from '../../shared/work.component';
 
 @Component({
-  selector: 'pp-prioritize',
-  standalone: true,
-  imports: [CommonModule, WorkComponent, LetModule],
-  templateUrl: './prioritize.component.html',
-  styles: [`
+    selector: 'pp-prioritize',
+    imports: [AsyncPipe, WorkComponent, RxLet],
+    templateUrl: './prioritize.component.html',
+    styles: [`
     .container {
       display: grid;
       width: auto;
@@ -47,7 +46,7 @@ import { WorkComponent } from '../../shared/work.component';
       overflow: hidden;
     }
   `],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrioritizeComponent {
 

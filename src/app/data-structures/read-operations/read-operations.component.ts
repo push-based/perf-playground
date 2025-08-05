@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { toDictionary } from '@rx-angular/cdk/transformations';
 import { createItems, Item, measureOperations } from '../../shared/util';
 
 @Component({
-  selector: 'pp-read-operations',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './read-operations.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'pp-read-operations',
+    imports: [],
+    templateUrl: './read-operations.component.html',
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReadOperationsComponent {
 

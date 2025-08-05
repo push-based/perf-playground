@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CommonModule, NgForOf } from '@angular/common';
+
 
 @Component({
-  selector: 'pp-work',
-  standalone: true,
-  imports: [NgForOf],
-  template: `
-    <div *ngFor="let item of items"
-        [style.background-color]="item"></div>
-  `,
-  styles: [`
+    selector: 'pp-work',
+    imports: [],
+    template: `
+    @for (item of items; track item) {
+      <div
+      [style.background-color]="item"></div>
+    }
+    `,
+    styles: [`
     :host {
       display: flex;
       flex-wrap: wrap;
@@ -19,7 +20,7 @@ import { CommonModule, NgForOf } from '@angular/common';
       width: 2px;
     }
   `],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WorkComponent implements OnInit {
 

@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { toDictionary } from '@rx-angular/cdk/transformations';
 import { createItems, Item, measureOperations } from '../../shared/util';
 
 @Component({
-  selector: 'pp-avoid-nested-loops',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './avoid-nested-loops.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'pp-avoid-nested-loops',
+    imports: [],
+    templateUrl: './avoid-nested-loops.component.html',
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvoidNestedLoopsComponent {
 

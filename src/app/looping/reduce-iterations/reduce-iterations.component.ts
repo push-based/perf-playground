@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { toDictionary } from '@rx-angular/cdk/transformations';
 import { createItems, Item, measureOperations } from '../../shared/util';
 
 @Component({
-  selector: 'pp-reduce-iterations',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './reduce-iterations.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'pp-reduce-iterations',
+    imports: [],
+    templateUrl: './reduce-iterations.component.html',
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReduceIterationsComponent {
 

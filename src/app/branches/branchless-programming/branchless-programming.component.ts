@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { measureOperations, randomIntFromInterval } from '../../shared/util';
 
 @Component({
-  selector: 'pp-branchless-programming',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './branchless-programming.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'pp-branchless-programming',
+    imports: [],
+    templateUrl: './branchless-programming.component.html',
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BranchlessProgrammingComponent {
 

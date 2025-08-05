@@ -3,8 +3,8 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
     <div class="sidebar">
       <h2 class="group-title">Looping</h2>
       <a class="nav-item"
@@ -66,7 +66,7 @@ import { filter } from 'rxjs';
       <router-outlet></router-outlet>
     </div>
   `,
-  styles: [`
+    styles: [`
     :host {
       display: flex;
       padding: .5rem 0;
@@ -95,7 +95,8 @@ import { filter } from 'rxjs';
       background-color: rgba(0,0,0, .12);
     }
   `],
-  styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   title = 'perf-playground';
